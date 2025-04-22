@@ -41,19 +41,23 @@ Each microservice follows hexagonal architecture and DDD principles, ensuring hi
 - **Java 17** or higher.
 - **Maven** installed.
 
-### Steps to Test the Services
-#### Build the microservices:
-`mvn clean install`  
-The `install` phase is necessary because it is the phase where `AVRO` objects are generated.
-
+### Steps to Run the Services
 #### Start the services with Docker Compose:
 **Kafka Cluster (KRaft):**  
-`docker-compose -f common.yml -f kafka_cluster.yml up`  
+`docker-compose -f common.yml -f kafka_cluster.yml up`
 
 `kafka_cluster.yml` contains everything related to the Kafka cluster. It will spin up 3 Brokers (controller, bootstrap), create the necessary topics for the service, and launch a graphical tool to navigate the cluster.
 
 **PostgreSQL & PgAdmin**  
 `docker-compose -f common.yml -f postgres.yml up`
+
+#### Build the microservices:
+> ⚠️ **Note:** It is required to have the database running **before** executing the `test` phase in Maven.  
+> This course is focused on architecture and design patterns, so tests are **not** the main focus.
+
+`mvn clean install`  
+The `install` phase is necessary because it is the phase where `AVRO` objects are generated.
+
 
 #### Access the tools:
 Kafka UI: http://localhost:9000  
