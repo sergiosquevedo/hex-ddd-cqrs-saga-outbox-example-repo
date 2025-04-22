@@ -18,6 +18,7 @@ It contains the development of a food ordering system based on microservices, fo
 ### Implemented Patterns and Principles
 - **Clean Architecture**: Separation of concerns into layers to facilitate maintainability and scalability.
 - **Hexagonal Architecture**: Isolation of the business core through ports and adapters.
+- **DDD**: Domain Driven Design principles.
 - **SAGA**: Management of distributed transactions in microservices.
 - **Outbox**: Ensures consistency between the database and events published to Kafka.
 - **CQRS**: Separation of read and write operations to optimize performance.
@@ -31,7 +32,7 @@ The project is divided into multiple microservices, each with specific responsib
 - **Restaurant Service**: Restaurant approval management.
 - **Customer Service**: Customer management.
 
-Each microservice follows clean and hexagonal architecture principles, ensuring high cohesion and low coupling.
+Each microservice follows hexagonal architecture and DDD principles, ensuring high cohesion and low coupling.
 
 ## Setup and Deployment
 
